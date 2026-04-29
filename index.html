@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fruits App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- LEFT (MASTER) -->
+    <div class="left">
+        <h2>Fruits</h2>
+        <input type="text" id="search" placeholder="Search...">
+
+        <div id="fruitList"></div>
+    </div>
+
+    <!-- RIGHT (DETAIL) -->
+    <div class="right">
+        <h2 id="fruitName">Select a fruit</h2>
+        <img id="fruitImage" width="150">
+        <p id="fruitDesc"></p>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button onclick="showTab('supplier')">Supplier Info</button>
+            <button onclick="showTab('more')">More Data</button>
+        </div>
+
+        <!-- Supplier Tab -->
+        <div id="supplier" class="tab-content">
+            <table border="1" width="100%">
+                <thead>
+                    <tr>
+                        <th>Supplier</th>
+                        <th>Since</th>
+                        <th>City</th>
+                        <th>Contact</th>
+                        <th>Phone</th>
+                    </tr>
+                </thead>
+                <tbody id="supplierTable"></tbody>
+            </table>
+
+            <br>
+            <button onclick="saveData()">Save</button>
+            <button onclick="cancelData()">Cancel</button>
+        </div>
+
+        <!-- More Data Tab -->
+        <div id="more" class="tab-content" style="display:none;">
+            <p id="moreData"></p>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
