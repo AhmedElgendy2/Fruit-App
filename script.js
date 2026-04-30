@@ -202,6 +202,108 @@ const fruits = [
                 phone: "01226245434"
             }
         ]
+    },
+    {
+        name: "Guava",
+        category: "Acidic",
+        price: "25/kg",
+        description: "Rich in vitamin C",
+        image: "images/guava.jpg",
+        supplier: [
+            {
+                name: "omar",
+                since: "2023",
+                city: "Giza",
+                contact: "Ammar",
+                phone: "01119711349"
+            },
+             {
+                name: "Khaled",
+                since: "2019",
+                city: "Cairo",
+                contact: "Mark",
+                phone: "01119711349"
+            },
+            {
+                name: "Nasr",
+                since: "2022",
+                city: "Alexandria",
+                contact: "Fayez",
+                phone: "01125556422"
+            },
+            {
+                name: "Abdo",
+                since: "2021",
+                city: "Cairo",
+                contact: "Ahmed",
+                phone: "01222354472"
+            },
+            {
+                name: "Abdallah",
+                since: "2020",
+                city: "Aswan",
+                contact: "Mahmoud",
+                phone: "01226245434"
+            },
+            {
+                name: "Eyad",
+                since: "2022",
+                city: "Shohag",
+                contact: "Moaaz",
+                phone: "01226245434"
+            }
+        ]
+    },
+    {
+        name: "Grapes",
+        category: "Acidic",
+        price: "25/kg",
+        description: "juicy fruit",
+        image: "images/grapes.jpg",
+        supplier: [
+            {
+                name: "Hamdy",
+                since: "2023",
+                city: "Giza",
+                contact: "Moustafa",
+                phone: "01119711349"
+            },
+             {
+                name: "Omar",
+                since: "2019",
+                city: "Cairo",
+                contact: "Karam",
+                phone: "01119711349"
+            },
+            {
+                name: "Sayed",
+                since: "2022",
+                city: "Alexandria",
+                contact: "Fayez",
+                phone: "01125556422"
+            },
+            {
+                name: "Abdallah",
+                since: "2021",
+                city: "Cairo",
+                contact: "Gamal",
+                phone: "01222354472"
+            },
+            {
+                name: "Tarek",
+                since: "2020",
+                city: "Aswan",
+                contact: "Islam",
+                phone: "01226245434"
+            },
+            {
+                name: "Naser",
+                since: "2022",
+                city: "Shohag",
+                contact: "Moaaz",
+                phone: "01226245434"
+            }
+        ]
     }
 ];
 

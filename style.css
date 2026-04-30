@@ -96,3 +96,7 @@ button {
     display: block;
     margin-bottom: 10px;
 }
+table tbody tr:hover {
+    background: #d6e4ff;
+    cursor: pointer;
+}
