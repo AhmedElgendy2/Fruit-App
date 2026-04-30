@@ -1,6 +1,8 @@
-body {
-    font-family: Arial;
+html, body {
+    height: 100%;
     margin: 0;
+    overflow: hidden;
+    font-family: Arial;
     background: #fff;
 }
 
@@ -22,6 +24,9 @@ body {
 .right {
     width: 65%;
     padding: 20px;
+
+    height: 100vh;
+    overflow-y: auto;
 }
 
 h2 {
