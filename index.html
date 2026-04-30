@@ -9,15 +9,23 @@
 
 <div class="container">
 
-    <!-- LEFT (MASTER) -->
+    <!-- LEFT -->
     <div class="left">
         <h2>Fruits</h2>
+
+        <!-- FRUIT FILTER -->
+        <select id="fruitFilter" onchange="filterFruits()">
+            <option value="">All Types</option>
+            <option value="Alkaline">Alkaline</option>
+            <option value="Acidic">Acidic</option>
+        </select>
+
         <input type="text" id="search" placeholder="Search...">
 
         <div id="fruitList"></div>
     </div>
 
-    <!-- RIGHT (DETAIL) -->
+    <!-- RIGHT -->
     <div class="right">
         <h2 id="fruitName">Select a fruit</h2>
         <img id="fruitImage" width="150">
@@ -29,8 +37,24 @@
             <button onclick="showTab('more')">More Data</button>
         </div>
 
-        <!-- Supplier Tab -->
+        <!-- Supplier -->
         <div id="supplier" class="tab-content">
+
+            <!-- FILTER + SORT -->
+            <select id="cityFilter" onchange="filterTable()">
+                <option value="">All Cities</option>
+                <option value="Cairo">Cairo</option>
+                <option value="Giza">Giza</option>
+                <option value="Alexandria">Alexandria</option>
+                <option value="Aswan">Aswan</option>
+                <option value="Shohag">Shohag</option>
+            </select>
+
+            <button onclick="sortTable('name')">Sort by Name</button>
+            <button onclick="sortTable('since')">Sort by Since</button>
+
+            <br><br>
+
             <table border="1" width="100%">
                 <thead>
                     <tr>
@@ -44,12 +68,11 @@
                 <tbody id="supplierTable"></tbody>
             </table>
 
-            <br>
             <button onclick="saveData()">Save</button>
             <button onclick="cancelData()">Cancel</button>
         </div>
 
-        <!-- More Data Tab -->
+        <!-- More -->
         <div id="more" class="tab-content" style="display:none;">
             <p id="moreData"></p>
         </div>

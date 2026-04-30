@@ -1,7 +1,7 @@
 body {
     font-family: Arial;
     margin: 0;
-    background: linear-gradient(to right, #ffffff);
+    background: #fff;
 }
 
 .container {
@@ -9,11 +9,12 @@ body {
     height: 100vh;
 }
 
+/* LEFT */
 .left {
     width: 35%;
     background: #adc1e0;
-    border-right: 1px solid #f5f7fa;
     padding: 15px;
+    border-right: 1px solid #ccc;
 }
 
 .right {
@@ -25,12 +26,13 @@ h2 {
     margin-top: 0;
 }
 
-input {
+input, select {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
 }
 
+/* FRUIT ITEM */
 .fruit-item {
     cursor: pointer;
     border: 1px solid #af1616;
@@ -40,21 +42,13 @@ input {
     gap: 10px;
     align-items: center;
     border-radius: 6px;
-    transition: 0.2s;
 }
 
 .fruit-item:hover {
     background: #ee054b;
 }
 
-.fruit-item img {
-    border-radius: 6px;
-}
-
-.tabs {
-    margin-top: 15px;
-}
-
+/* TABS */
 .tabs button {
     padding: 8px 12px;
     border: none;
@@ -64,17 +58,14 @@ input {
     border-radius: 5px;
 }
 
-.tabs button:hover {
-    background: #460ee0;
-}
-
 .tab-content {
     margin-top: 10px;
-    background: #ffffff;
+    background: #fff;
     padding: 10px;
     border-radius: 6px;
 }
 
+/* TABLE */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -94,7 +85,18 @@ button {
     cursor: pointer;
     border-radius: 5px;
 }
-
-button:last-child {
-    background: #f44336;
+.fruit-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #fff;
+}
+#fruitImage {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+    margin-bottom: 10px;
 }
