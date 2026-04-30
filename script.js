@@ -208,7 +208,6 @@ const fruits = [
 let currentSuppliers = [];
 let activeSuppliers = [];
 
-// ================= FRUITS =================
 const fruitList = document.getElementById("fruitList");
 
 function displayFruits(data) {
@@ -234,19 +233,16 @@ function displayFruits(data) {
 
 displayFruits(fruits);
 
-// FILTER FRUITS (LEFT)
 function filterFruits() {
     const value = document.getElementById("fruitFilter").value;
 
-    if (value === "") {
-        displayFruits(fruits);
-    } else {
-        const filtered = fruits.filter(f => f.category === value);
-        displayFruits(filtered);
-    }
+    const filtered = value === ""
+        ? fruits
+        : fruits.filter(f => f.category === value);
+
+    displayFruits(filtered);
 }
 
-// SEARCH
 document.getElementById("search").addEventListener("input", function () {
     const value = this.value.toLowerCase();
 
@@ -257,9 +253,14 @@ document.getElementById("search").addEventListener("input", function () {
     displayFruits(filtered);
 });
 
-// SELECT FRUIT
 function selectFruit(index) {
     const fruit = fruits[index];
+
+    // hide message
+    document.getElementById("emptyState").style.display = "none";
+
+    // show details
+    document.getElementById("fruitDetails").style.display = "block";
 
     document.getElementById("fruitName").innerText = fruit.name;
     document.getElementById("fruitImage").src = fruit.image;
@@ -269,13 +270,13 @@ function selectFruit(index) {
         `Type: ${fruit.category} | Price: ${fruit.price}`;
 
     loadSupplier(fruit.supplier);
+    showTab("supplier");
 }
 
-// ================= SUPPLIER =================
 function loadSupplier(data) {
     currentSuppliers = data;
     activeSuppliers = data;
-    renderTable(activeSuppliers);
+    renderTable(data);
 }
 
 function renderTable(data) {
@@ -295,36 +296,29 @@ function renderTable(data) {
     });
 }
 
-// FILTER TABLE (CITY)
 function filterTable() {
     const city = document.getElementById("cityFilter").value;
 
-    if (city === "") {
-        activeSuppliers = currentSuppliers;
-    } else {
-        activeSuppliers = currentSuppliers.filter(s => s.city === city);
-    }
+    const filtered = city === ""
+        ? currentSuppliers
+        : currentSuppliers.filter(s => s.city === city);
 
-    renderTable(activeSuppliers);
+    renderTable(filtered);
 }
 
-// SORT FIXED
 function sortTable(type) {
     let sorted = [...activeSuppliers];
 
     if (type === "name") {
         sorted.sort((a, b) => a.name.localeCompare(b.name));
-    }
-
-    if (type === "since") {
+    } else {
         sorted.sort((a, b) => Number(a.since) - Number(b.since));
     }
 
     activeSuppliers = sorted;
-    renderTable(activeSuppliers);
+    renderTable(sorted);
 }
 
-// TABS
 function showTab(tab) {
     document.getElementById("supplier").style.display = "none";
     document.getElementById("more").style.display = "none";
@@ -332,7 +326,6 @@ function showTab(tab) {
     document.getElementById(tab).style.display = "block";
 }
 
-// BUTTONS
 function saveData() {
     alert("Saved!");
 }
